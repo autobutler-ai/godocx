@@ -270,7 +270,7 @@ func (p *Paragraph) AddLink(text string, link string) *Hyperlink {
 
 	p.ct.Children = append(p.ct.Children, ctypes.ParagraphChild{Link: hyperLink})
 
-	return newHyperlink(p.root, hyperLink)
+	return NewHyperlink(p.root, hyperLink)
 }
 
 // AddDrawing adds a new drawing (image) to the Paragraph.

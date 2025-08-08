@@ -10,7 +10,7 @@ type Hyperlink struct {
 	ct   *ctypes.Hyperlink // ct is the underlying hyperlink element from the wml/ctypes package.
 }
 
-func newHyperlink(root *RootDoc, ct *ctypes.Hyperlink) *Hyperlink {
+func NewHyperlink(root *RootDoc, ct *ctypes.Hyperlink) *Hyperlink {
 	return &Hyperlink{root: root, ct: ct}
 }
 

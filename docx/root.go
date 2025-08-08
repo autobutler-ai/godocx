@@ -11,7 +11,8 @@ import (
 // It contains information about the document path, file map, the document structure,
 // and relationships with other parts of the document.
 type RootDoc struct {
-	Path        string        // Path represents the path of the document.
+	Path string // Path represents the path of the document.
+	// TODO: Need to actually parse out some of the file map, specifically word/numbering.xml
 	FileMap     sync.Map      // FileMap is a synchronized map for managing files related to the document.
 	RootRels    Relationships // RootRels represents relationships at the root level.
 	ContentType ContentTypes

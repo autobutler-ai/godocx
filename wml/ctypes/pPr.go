@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"strconv"
 
-	"github.com/gomutex/godocx/wml/stypes"
+	"github.com/autobutler-ai/godocx/wml/stypes"
 )
 
 // Numbering Level Associated Paragraph Properties

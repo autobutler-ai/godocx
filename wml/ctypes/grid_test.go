@@ -6,7 +6,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/gomutex/godocx/internal"
+	"github.com/autobutler-ai/godocx/internal"
 )
 
 func TestGrid_MarshalXML(t *testing.T) {

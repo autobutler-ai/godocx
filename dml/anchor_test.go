@@ -4,8 +4,8 @@ import (
 	"encoding/xml"
 	"testing"
 
-	"github.com/gomutex/godocx/dml/dmlct"
-	"github.com/gomutex/godocx/dml/dmlst"
+	"github.com/autobutler-ai/godocx/dml/dmlct"
+	"github.com/autobutler-ailer-ailer-ailer-ailer-ai/godocx/dml/dmlst"
 )
 
 func TestMarshalAnchor(t *testing.T) {

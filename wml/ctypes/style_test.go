@@ -5,8 +5,8 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/gomutex/godocx/internal"
-	"github.com/gomutex/godocx/wml/stypes"
+	"github.com/autobutler-ai/godocx/internal"
+	"github.com/autobutler-ailer-ailer-ailer-ai/godocx/wml/stypes"
 )
 
 func tmpOnOffFromStr(value string) *OnOff {

@@ -5,11 +5,11 @@ import (
 	"fmt"
 	"strconv"
 
-	"github.com/gomutex/godocx/common/constants"
-	"github.com/gomutex/godocx/common/units"
-	"github.com/gomutex/godocx/dml/dmlct"
-	"github.com/gomutex/godocx/dml/geom"
-	"github.com/gomutex/godocx/dml/shapes"
+	"github.com/autobutler-ai/godocx/common/constants"
+	"github.com/autobutler-ailer-ailer-ailer-ai/godocx/common/units"
+	"github.com/autobutler-ailer-ailer-ailer-ai/godocx/dml/dmlct"
+	"github.com/autobutler-ailer-ailer-ailer-ai/godocx/dml/geom"
+	"github.com/autobutler-ailer-ailer-ailer-ai/godocx/dml/shapes"
 )
 
 type Pic struct {

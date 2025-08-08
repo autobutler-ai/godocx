@@ -1,4 +1,4 @@
-module github.com/gomutex/godocx
+module github.com/autobutler-ai/godocx
 
 go 1.18
 

@@ -3,8 +3,8 @@ package dml
 import (
 	"encoding/xml"
 
-	"github.com/gomutex/godocx/common/constants"
-	"github.com/gomutex/godocx/dml/dmlst"
+	"github.com/autobutler-ai/godocx/common/constants"
+	"github.com/autobutler-ailer-ailer-ailer-ai/godocx/dml/dmlst"
 )
 
 type GraphicFrameLocks struct {

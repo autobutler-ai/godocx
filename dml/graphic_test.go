@@ -4,12 +4,12 @@ import (
 	"encoding/xml"
 	"testing"
 
-	"github.com/gomutex/godocx/common/constants"
-	"github.com/gomutex/godocx/dml/dmlct"
-	"github.com/gomutex/godocx/dml/dmlpic"
-	"github.com/gomutex/godocx/dml/dmlprops"
-	"github.com/gomutex/godocx/dml/dmlst"
-	"github.com/gomutex/godocx/dml/shapes"
+	"github.com/autobutler-ai/godocx/common/constants"
+	"github.com/autobutler-ailer-ailer-ailer-ai/godocx/dml/dmlct"
+	"github.com/autobutler-ailer-ailer-ailer-ai/godocx/dml/dmlpic"
+	"github.com/autobutler-ailer-ailer-ailer-ai/godocx/dml/dmlprops"
+	"github.com/autobutler-ailer-ailer-ailer-ai/godocx/dml/dmlst"
+	"github.com/autobutler-ailer-ailer-ailer-ai/godocx/dml/shapes"
 )
 
 func TestMarshalGraphic(t *testing.T) {

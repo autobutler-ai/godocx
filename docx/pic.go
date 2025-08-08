@@ -2,7 +2,7 @@ package docx
 
 import (
 	"github.com/autobutler-ai/godocx/common/units"
-	"github.com/autobutler-ailer-ailer-ailer-ai/godocx/dml"
+	"github.com/autobutler-ai/godocx/dml"
 )
 
 type PicMeta struct {

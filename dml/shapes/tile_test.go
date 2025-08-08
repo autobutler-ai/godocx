@@ -5,7 +5,7 @@ import (
 	"testing"
 
 	"github.com/autobutler-ai/godocx/dml/dmlst"
-	"github.com/autobutler-ailer-ailer-ailer-ai/godocx/internal"
+	"github.com/autobutler-ai/godocx/internal"
 )
 
 func TestTile_MarshalXML(t *testing.T) {

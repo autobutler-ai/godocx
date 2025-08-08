@@ -8,9 +8,9 @@ import (
 	"strings"
 
 	"github.com/autobutler-ai/godocx/common/constants"
-	"github.com/autobutler-ailer-ailer-ailer-ai/godocx/docx"
-	"github.com/autobutler-ailer-ailer-ailer-ai/godocx/internal"
-	"github.com/autobutler-ailer-ailer-ailer-ai/godocx/wml/ctypes"
+	"github.com/autobutler-ai/godocx/docx"
+	"github.com/autobutler-ai/godocx/internal"
+	"github.com/autobutler-ai/godocx/wml/ctypes"
 )
 
 // ReadFromZip reads files from a zip archive.

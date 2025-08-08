@@ -6,7 +6,7 @@ import (
 	"testing"
 
 	"github.com/autobutler-ai/godocx/internal"
-	"github.com/autobutler-ailer-ailer-ailer-ai/godocx/wml/stypes"
+	"github.com/autobutler-ai/godocx/wml/stypes"
 )
 
 func TestOnOff_MarshalXML(t *testing.T) {

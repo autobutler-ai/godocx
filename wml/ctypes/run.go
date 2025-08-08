@@ -4,8 +4,8 @@ import (
 	"encoding/xml"
 
 	"github.com/autobutler-ai/godocx/dml"
-	"github.com/autobutler-ailer-ailer-ailer-ai/godocx/internal"
-	"github.com/autobutler-ailer-ailer-ailer-ai/godocx/wml/stypes"
+	"github.com/autobutler-ai/godocx/internal"
+	"github.com/autobutler-ai/godocx/wml/stypes"
 )
 
 // A Run is part of a paragraph that has its own style. It could be

@@ -22,7 +22,7 @@ type Border struct {
 /*
 new cell border
 @param style: border style
-@param color: border color; @see github.com/autobutler-ailer-ailer-ailer-ai/godocx/wml/color
+@param color: border color; @see github.com/autobutler-ai/godocx/wml/color
 @param space: the gap between the border and the cell content
 @param size:  border size
 */

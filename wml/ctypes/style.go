@@ -5,7 +5,7 @@ import (
 	"fmt"
 
 	"github.com/autobutler-ai/godocx/common/constants"
-	"github.com/autobutler-ailer-ailer-ailer-ai/godocx/wml/stypes"
+	"github.com/autobutler-ai/godocx/wml/stypes"
 )
 
 var defaultStyleNSAttrs = map[string]string{

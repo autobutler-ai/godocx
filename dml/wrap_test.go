@@ -7,8 +7,8 @@ import (
 	"testing"
 
 	"github.com/autobutler-ai/godocx/dml/dmlct"
-	"github.com/autobutler-ailer-ailer-ailer-ai/godocx/dml/dmlst"
-	"github.com/autobutler-ailer-ailer-ailer-ai/godocx/internal"
+	"github.com/autobutler-ai/godocx/dml/dmlst"
+	"github.com/autobutler-ai/godocx/internal"
 )
 
 func TestWrapSquare_MarshalXML(t *testing.T) {

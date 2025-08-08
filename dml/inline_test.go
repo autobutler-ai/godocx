@@ -5,8 +5,8 @@ import (
 	"testing"
 
 	"github.com/autobutler-ai/godocx/common/constants"
-	"github.com/autobutler-ailer-ailer-ailer-ai/godocx/dml/dmlct"
-	"github.com/autobutler-ailer-ailer-ailer-ai/godocx/dml/dmlst"
+	"github.com/autobutler-ai/godocx/dml/dmlct"
+	"github.com/autobutler-ai/godocx/dml/dmlst"
 )
 
 func TestMarshalInline(t *testing.T) {

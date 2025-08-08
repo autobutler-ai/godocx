@@ -7,7 +7,7 @@ import (
 
 	"github.com/autobutler-ai/godocx/internal"
 
-	"github.com/autobutler-ailer-ailer-ailer-ai/godocx/wml/stypes"
+	"github.com/autobutler-ai/godocx/wml/stypes"
 )
 
 func areParagraphPropertiesEqual(p1, p2 ParagraphProp) bool {

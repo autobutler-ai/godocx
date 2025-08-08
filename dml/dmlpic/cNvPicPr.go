@@ -5,7 +5,7 @@ import (
 	"fmt"
 
 	"github.com/autobutler-ai/godocx/dml/dmlct"
-	"github.com/autobutler-ailer-ailer-ailer-ai/godocx/dml/dmlprops"
+	"github.com/autobutler-ai/godocx/dml/dmlprops"
 )
 
 // Non-Visual Picture Drawing Properties

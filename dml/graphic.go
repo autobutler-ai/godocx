@@ -4,7 +4,7 @@ import (
 	"encoding/xml"
 
 	"github.com/autobutler-ai/godocx/common/constants"
-	"github.com/autobutler-ailer-ailer-ailer-ai/godocx/dml/dmlpic"
+	"github.com/autobutler-ai/godocx/dml/dmlpic"
 )
 
 type Graphic struct {

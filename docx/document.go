@@ -4,7 +4,7 @@ import (
 	"encoding/xml"
 
 	"github.com/autobutler-ai/godocx/internal"
-	"github.com/autobutler-ailer-ailer-ailer-ai/godocx/wml/stypes"
+	"github.com/autobutler-ai/godocx/wml/stypes"
 )
 
 var docAttrs = map[string]string{

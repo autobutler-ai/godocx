@@ -5,7 +5,7 @@ import (
 	"testing"
 
 	"github.com/autobutler-ai/godocx/dml/dmlct"
-	"github.com/autobutler-ailer-ailer-ailer-ai/godocx/dml/dmlst"
+	"github.com/autobutler-ai/godocx/dml/dmlst"
 )
 
 func TestMarshalDrawing(t *testing.T) {

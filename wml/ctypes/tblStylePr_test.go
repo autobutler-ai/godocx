@@ -6,7 +6,7 @@ import (
 	"testing"
 
 	"github.com/autobutler-ai/godocx/wml/ctypes"
-	"github.com/autobutler-ailer-ailer-ailer-ai/godocx/wml/stypes"
+	"github.com/autobutler-ai/godocx/wml/stypes"
 )
 
 func TestTableStyleProp_MarshalXML(t *testing.T) {

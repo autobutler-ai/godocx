@@ -4,7 +4,7 @@ import (
 	"encoding/xml"
 
 	"github.com/autobutler-ai/godocx/common/constants"
-	"github.com/autobutler-ailer-ailer-ailer-ai/godocx/dml/dmlst"
+	"github.com/autobutler-ai/godocx/dml/dmlst"
 )
 
 type GraphicFrameLocks struct {

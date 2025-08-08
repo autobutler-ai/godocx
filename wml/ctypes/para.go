@@ -32,7 +32,7 @@ type ParagraphChild struct {
 type Hyperlink struct {
 	XMLName  xml.Name `xml:"http://schemas.openxmlformats.org/wordprocessingml/2006/main hyperlink,omitempty"`
 	ID       string   `xml:"http://schemas.openxmlformats.org/officeDocument/2006/relationships id,attr"`
-	Run      *Run
+	Run      *Run     `xml:"tr,omitempty"`
 	Children []ParagraphChild
 }
 
@@ -124,6 +124,15 @@ loop:
 				}
 
 				p.Children = append(p.Children, ParagraphChild{Run: r})
+			case "hyperlink":
+				// TODO: Need to recursively parse children of hyperlink, specifically the Run
+				// contained inside it.
+				h := &Hyperlink{}
+				if err = d.DecodeElement(h, &elem); err != nil {
+					return err
+				}
+				break
+				// p.Children = append(p.Children, ParagraphChild{Link: h})
 			case "pPr":
 				p.Property = &ParagraphProp{}
 				if err = d.DecodeElement(p.Property, &elem); err != nil {

@@ -2,6 +2,8 @@ package docx
 
 import (
 	"encoding/xml"
+
+	"github.com/autobutler-ai/godocx/wml/stypes"
 )
 
 var numberingAttrs = map[string]string{
@@ -33,76 +35,45 @@ var numberingAttrs = map[string]string{
 
 // This element specifies the contents of a main document part in a WordprocessingML document.
 type Numbering struct {
+	XMLName xml.Name `xml:"numbering"`
 	// Reference to the RootDoc
 	Root *RootDoc
 
-	// Elements
-	AbstractNum *AbstractNum
-	// Num         *Num
-	RelativePath string // RelativePath is the path to the numbering file within the document package.
+	AbstractNum  *AbstractNum `xml:"abstractNum"`
+	Num          *Num         `xml:"num"`
+	RelativePath string       // RelativePath is the path to the numbering file within the document package.
 }
 
-// MarshalXML implements the xml.Marshaler interface for the Document type.
-func (n Numbering) MarshalXML(e *xml.Encoder, start xml.StartElement) (err error) {
-	start.Name.Local = "w:numbering"
-
-	for key, value := range numberingAttrs {
-		attr := xml.Attr{Name: xml.Name{Local: key}, Value: value}
-		start.Attr = append(start.Attr, attr)
-	}
-
-	err = e.EncodeToken(start)
-	if err != nil {
-		return err
-	}
-
-	if n.AbstractNum != nil {
-		abstractNumElement := xml.StartElement{Name: xml.Name{Local: "w:abstractNum"}}
-		if err = n.AbstractNum.MarshalXML(e, abstractNumElement); err != nil {
-			return err
-		}
-	}
-
-	// if n.Num != nil {
-	// 	numElement := xml.StartElement{Name: xml.Name{Local: "w:num"}}
-	// 	if err = n.Num.MarshalXML(e, numElement); err != nil {
-	// 		return err
-	// 	}
-	// }
-
-	return e.EncodeToken(xml.EndElement{Name: start.Name})
+// This element specifies the contents of a main document part in a WordprocessingML document.
+type AbstractNum struct {
+	AbstractNumId string  `xml:"abstractNumId,attr"`
+	Levels        []Level `xml:"lvl"`
 }
 
-func (n *Numbering) UnmarshalXML(decoder *xml.Decoder, start xml.StartElement) (err error) {
-	for {
-		currentToken, err := decoder.Token()
-		if err != nil {
-			return err
-		}
+type Num struct {
+	NumId         string `xml:"numId,attr"`
+	AbstractNumId string `xml:"abstractNumId,attr"`
+}
 
-		switch elem := currentToken.(type) {
-		case xml.StartElement:
-			switch elem.Name.Local {
-			case "abstractNum":
-				abstractNum := NewAbstractNum()
-				if err := decoder.DecodeElement(abstractNum, &elem); err != nil {
-					return err
-				}
-				n.AbstractNum = abstractNum
-			// case "num":
-			// 	num := NewNum()
-			// 	if err := decoder.DecodeElement(num, &elem); err != nil {
-			// 		return err
-			// 	}
-			// 	n.Num = num
-			default:
-				if err = decoder.Skip(); err != nil {
-					return err
-				}
-			}
-		case xml.EndElement:
-			return nil
-		}
-	}
+type Level struct {
+	Level     int       `xml:"ilvl,attr"`
+	Start     Start     `xml:"start"`
+	NumFmt    NumFmt    `xml:"numFmt"`
+	LevelText LevelText `xml:"lvlText"`
+}
 
+type Start struct {
+	Val int `xml:"val,attr"`
+}
+
+type LevelText struct {
+	Val string `xml:"val,attr"`
+}
+
+type LevelJustification struct {
+	Val string `xml:"val,attr"`
+}
+
+type NumFmt struct {
+	Val stypes.NumFmt `xml:"val,attr"`
 }

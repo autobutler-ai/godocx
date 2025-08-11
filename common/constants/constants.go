@@ -80,6 +80,6 @@ const (
 )
 
 const MediaPath = "word/media/"
-const NumberingSuffix = "numbering.xml"
+const NumberingPath = "word/numbering.xml"
 
 const ConentTypeFileIdx = "[Content_Types].xml"

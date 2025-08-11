@@ -1,6 +1,6 @@
 # Godocx
 
-[![Go CI](https://github.com/autobutler-ai/godocx/actions/workflows/go.yml/badge.svg)](https://github.com/autobutler-ai/godocx/actions/workflows/go.yml) ![GitHub go.mod Go version](https://img.shields.io/github/go-mod/go-version/gomutex/godocx) [![Go Reference](https://pkg.go.dev/badge/github.com/autobutler-ai/godocx.svg)](https://pkg.go.dev/github.com/autobutler-ai/godocx)
+[![Go CI](https://github.com/autobutler-ai/godocx/actions/workflows/go.yml/badge.svg)](https://github.com/autobutler-ai/godocx/actions/workflows/go.yml) ![GitHub go.mod Go version](https://img.shields.io/github/go-mod/go-version/autobutler-ai/godocx) [![Go Reference](https://pkg.go.dev/badge/github.com/autobutler-ai/godocx.svg)](https://pkg.go.dev/github.com/autobutler-ai/godocx)
  [![Go Report Card](https://goreportcard.com/badge/github.com/autobutler-ai/godocx)](https://goreportcard.com/report/github.com/autobutler-ai/godocx) [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 

@@ -17,6 +17,7 @@ type RootDoc struct {
 	RootRels    Relationships // RootRels represents relationships at the root level.
 	ContentType ContentTypes
 	Document    *Document      // Document is the main document structure.
+	Numbering   *Numbering     // Numbering format document
 	DocStyles   *ctypes.Styles // Document styles
 
 	rID        int // rId is used to generate unique relationship IDs.
@@ -47,8 +48,21 @@ func LoadDocXml(rd *RootDoc, fileName string, fileBytes []byte) (*Document, erro
 		return nil, err
 	}
 
-	doc.relativePath = fileName
+	doc.RelativePath = fileName
 	return &doc, nil
+}
+
+func LoadNumberingXml(rd *RootDoc, fileName string, fileBytes []byte) (*Numbering, error) {
+	numbering := &Numbering{
+		Root: rd,
+	}
+	err := xml.Unmarshal(fileBytes, numbering)
+	if err != nil {
+		return nil, err
+	}
+
+	numbering.RelativePath = fileName
+	return numbering, nil
 }
 
 // Load styles.xml into Styles struct

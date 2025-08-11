@@ -73,7 +73,7 @@ func (rd *RootDoc) writeToZip(zw *zip.Writer) error {
 	if err != nil {
 		return err
 	}
-	rd.FileMap.Store(rd.Document.relativePath, docContent)
+	rd.FileMap.Store(rd.Document.RelativePath, docContent)
 
 	docStyleBytes, err := marshal(rd.DocStyles)
 	if err != nil {

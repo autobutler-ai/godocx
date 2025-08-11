@@ -135,6 +135,12 @@ func Unpack(content *[]byte) (*docx.RootDoc, error) {
 	for fileName, fileContent := range fileIndex {
 		if strings.HasPrefix(fileName, constants.MediaPath) {
 			rd.ImageCount += 1
+		} else if strings.HasSuffix(fileName, constants.NumberingSuffix) {
+			numbering, err := docx.LoadNumberingXml(rd, fileName, fileContent)
+			if err != nil {
+				return nil, err
+			}
+			rd.Numbering = numbering
 		}
 		rd.FileMap.Store(fileName, fileContent)
 	}

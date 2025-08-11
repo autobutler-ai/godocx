@@ -35,7 +35,7 @@ type Document struct {
 	// Non elements - helper fields
 	DocRels      Relationships // DocRels represents relationships specific to the document.
 	RID          int
-	relativePath string
+	RelativePath string
 }
 
 // IncRelationID increments the relation ID of the document and returns the new ID.

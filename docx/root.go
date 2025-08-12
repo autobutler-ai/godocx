@@ -31,7 +31,7 @@ type RootDocOptions struct {
 // NewRootDoc creates a new instance of the RootDoc structure.
 func NewRootDoc(options RootDocOptions) *RootDoc {
 	return &RootDoc{
-		Numbering: NewNumbering(options.IsOrdered),
+		Numbering: NewNumbering(1, options.IsOrdered),
 	}
 }
 

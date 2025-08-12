@@ -36,8 +36,6 @@ var numberingAttrs = map[string]string{
 // This element specifies the contents of a main document part in a WordprocessingML document.
 type Numbering struct {
 	XMLName xml.Name `xml:"numbering"`
-	// Reference to the RootDoc
-	Root *RootDoc
 
 	AbstractNum  *AbstractNum `xml:"abstractNum"`
 	Num          *Num         `xml:"num"`

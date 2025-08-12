@@ -38,7 +38,7 @@ func ReadFromZip(content *[]byte) (map[string][]byte, error) {
 
 func Unpack(content *[]byte) (*docx.RootDoc, error) {
 
-	rd := docx.NewRootDoc()
+	rd := docx.NewRootDoc(docx.RootDocOptions{})
 
 	fileIndex, err := ReadFromZip(content)
 	if err != nil {

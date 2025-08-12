@@ -42,10 +42,28 @@ type Numbering struct {
 	RelativePath string       // RelativePath is the path to the numbering file within the document package.
 }
 
+func NewNumbering(isOrdered bool) *Numbering {
+	return &Numbering{
+		AbstractNum: NewAbstractNum(isOrdered),
+	}
+}
+
 // This element specifies the contents of a main document part in a WordprocessingML document.
 type AbstractNum struct {
 	AbstractNumId string  `xml:"abstractNumId,attr"`
 	Levels        []Level `xml:"lvl"`
+}
+
+func NewAbstractNum(isOrdered bool) *AbstractNum {
+	if isOrdered {
+		return &AbstractNum{
+			Levels: orderedLevels,
+		}
+	} else {
+		return &AbstractNum{
+			Levels: unorderedLevels,
+		}
+	}
 }
 
 type Num struct {
@@ -74,4 +92,118 @@ type LevelJustification struct {
 
 type NumFmt struct {
 	Val stypes.NumFmt `xml:"val,attr"`
+}
+
+var orderedLevels = []Level{
+	{
+		Level:     0,
+		Start:     Start{Val: 1},
+		NumFmt:    NumFmt{Val: stypes.NumFmtDecimal},
+		LevelText: LevelText{Val: "%1."},
+	},
+	{
+		Level:     1,
+		Start:     Start{Val: 1},
+		NumFmt:    NumFmt{Val: stypes.NumFmtDecimal},
+		LevelText: LevelText{Val: "%1."},
+	},
+	{
+		Level:     2,
+		Start:     Start{Val: 1},
+		NumFmt:    NumFmt{Val: stypes.NumFmtDecimal},
+		LevelText: LevelText{Val: "%1."},
+	},
+	{
+		Level:     3,
+		Start:     Start{Val: 1},
+		NumFmt:    NumFmt{Val: stypes.NumFmtDecimal},
+		LevelText: LevelText{Val: "%1."},
+	},
+	{
+		Level:     4,
+		Start:     Start{Val: 1},
+		NumFmt:    NumFmt{Val: stypes.NumFmtDecimal},
+		LevelText: LevelText{Val: "%1."},
+	},
+	{
+		Level:     5,
+		Start:     Start{Val: 1},
+		NumFmt:    NumFmt{Val: stypes.NumFmtDecimal},
+		LevelText: LevelText{Val: "%1."},
+	},
+	{
+		Level:     6,
+		Start:     Start{Val: 1},
+		NumFmt:    NumFmt{Val: stypes.NumFmtDecimal},
+		LevelText: LevelText{Val: "%1."},
+	},
+	{
+		Level:     7,
+		Start:     Start{Val: 1},
+		NumFmt:    NumFmt{Val: stypes.NumFmtDecimal},
+		LevelText: LevelText{Val: "%1."},
+	},
+	{
+		Level:     8,
+		Start:     Start{Val: 1},
+		NumFmt:    NumFmt{Val: stypes.NumFmtDecimal},
+		LevelText: LevelText{Val: "%1."},
+	},
+}
+
+var unorderedLevels = []Level{
+	{
+		Level:     0,
+		Start:     Start{Val: 1},
+		NumFmt:    NumFmt{Val: stypes.NumFmtBullet},
+		LevelText: LevelText{Val: "●"},
+	},
+	{
+		Level:     1,
+		Start:     Start{Val: 1},
+		NumFmt:    NumFmt{Val: stypes.NumFmtBullet},
+		LevelText: LevelText{Val: "●"},
+	},
+	{
+		Level:     2,
+		Start:     Start{Val: 1},
+		NumFmt:    NumFmt{Val: stypes.NumFmtBullet},
+		LevelText: LevelText{Val: "●"},
+	},
+	{
+		Level:     3,
+		Start:     Start{Val: 1},
+		NumFmt:    NumFmt{Val: stypes.NumFmtBullet},
+		LevelText: LevelText{Val: "●"},
+	},
+	{
+		Level:     4,
+		Start:     Start{Val: 1},
+		NumFmt:    NumFmt{Val: stypes.NumFmtBullet},
+		LevelText: LevelText{Val: "●"},
+	},
+	{
+		Level:     5,
+		Start:     Start{Val: 1},
+		NumFmt:    NumFmt{Val: stypes.NumFmtBullet},
+		LevelText: LevelText{Val: "●"},
+	},
+	{
+		Level:     6,
+		Start:     Start{Val: 1},
+		NumFmt:    NumFmt{Val: stypes.NumFmtBullet},
+		LevelText: LevelText{Val: "●"},
+	},
+	{
+		Level:     7,
+		Start:     Start{Val: 1},
+		NumFmt:    NumFmt{Val: stypes.NumFmtBullet},
+		LevelText: LevelText{Val: "●"},
+	},
+	{
+		Level:     8,
+		Start:     Start{Val: 1},
+		NumFmt:    NumFmt{Val: stypes.NumFmtBullet},
+		LevelText: LevelText{Val: "●"},
+	},
 }

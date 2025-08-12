@@ -24,9 +24,15 @@ type RootDoc struct {
 	ImageCount uint
 }
 
+type RootDocOptions struct {
+	IsOrdered bool // IsOrdered indicates whether the numbering is ordered or unordered.
+}
+
 // NewRootDoc creates a new instance of the RootDoc structure.
-func NewRootDoc() *RootDoc {
-	return &RootDoc{}
+func NewRootDoc(options RootDocOptions) *RootDoc {
+	return &RootDoc{
+		Numbering: NewNumbering(options.IsOrdered),
+	}
 }
 
 // LoadDocXml decodes the provided XML data and returns a Document instance.

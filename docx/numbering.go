@@ -35,11 +35,15 @@ var numberingAttrs = map[string]string{
 
 // This element specifies the contents of a main document part in a WordprocessingML document.
 type Numbering struct {
-	XMLName xml.Name `xml:"numbering"`
-
+	XMLName      xml.Name
 	AbstractNum  *AbstractNum `xml:"abstractNum"`
 	Num          *Num         `xml:"num"`
 	RelativePath string       // RelativePath is the path to the numbering file within the document package.
+}
+
+func (n *Numbering) MarshalXML(e *xml.Encoder, start xml.StartElement) error {
+	// TODO: Need to add prefixing
+
 }
 
 func NewNumbering(abstractNumId int, isOrdered bool) *Numbering {

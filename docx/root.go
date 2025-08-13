@@ -59,7 +59,7 @@ func LoadDocXml(rd *RootDoc, fileName string, fileBytes []byte) (*Document, erro
 }
 
 func LoadNumberingXml(rd *RootDoc, fileName string, fileBytes []byte) (*Numbering, error) {
-	numbering := &Numbering{}
+	numbering := NewNumbering(1, false)
 	err := xml.Unmarshal(fileBytes, numbering)
 	if err != nil {
 		return nil, err

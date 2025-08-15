@@ -1,7 +1,7 @@
 package geom
 
 import (
-	"encoding/xml"
+	"github.com/nbio/xml"
 )
 
 // List of Shape Adjust Values

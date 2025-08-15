@@ -1,8 +1,9 @@
 package ctypes
 
 import (
-	"encoding/xml"
 	"fmt"
+
+	"github.com/nbio/xml"
 
 	"github.com/autobutler-ai/godocx/common/constants"
 	"github.com/autobutler-ai/godocx/wml/stypes"

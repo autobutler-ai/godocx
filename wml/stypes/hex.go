@@ -2,7 +2,7 @@ package stypes
 
 import (
 	"encoding/hex"
-	"encoding/xml"
+	"github.com/nbio/xml"
 	"errors"
 	"strings"
 )

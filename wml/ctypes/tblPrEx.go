@@ -1,6 +1,6 @@
 package ctypes
 
-import "encoding/xml"
+import "github.com/nbio/xml"
 
 type PropException struct {
 }

@@ -2,9 +2,10 @@ package ctypes
 
 import (
 	"bytes"
-	"encoding/xml"
 	"reflect"
 	"testing"
+
+	"github.com/nbio/xml"
 )
 
 func TestDocDefault_MarshalXML(t *testing.T) {

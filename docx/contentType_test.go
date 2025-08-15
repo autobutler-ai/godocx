@@ -1,9 +1,10 @@
 package docx
 
 import (
-	"encoding/xml"
 	"reflect"
 	"testing"
+
+	"github.com/nbio/xml"
 )
 
 func TestMarshal(t *testing.T) {

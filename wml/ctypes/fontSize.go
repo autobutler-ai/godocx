@@ -1,8 +1,9 @@
 package ctypes
 
 import (
-	"encoding/xml"
 	"strconv"
+
+	"github.com/nbio/xml"
 )
 
 // FontSize represents the font size of a text or element.

@@ -1,8 +1,9 @@
 package ctypes
 
 import (
-	"encoding/xml"
 	"strconv"
+
+	"github.com/nbio/xml"
 )
 
 // TrackChange represents the complex type for track change

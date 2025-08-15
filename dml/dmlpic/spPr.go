@@ -1,7 +1,7 @@
 package dmlpic
 
 import (
-	"encoding/xml"
+	"github.com/nbio/xml"
 	"fmt"
 )
 

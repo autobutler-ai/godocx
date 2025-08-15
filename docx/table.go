@@ -1,7 +1,7 @@
 package docx
 
 import (
-	"encoding/xml"
+	"github.com/nbio/xml"
 
 	"github.com/autobutler-ai/godocx/wml/ctypes"
 	"github.com/autobutler-ai/godocx/wml/stypes"

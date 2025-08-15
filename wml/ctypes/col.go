@@ -1,8 +1,9 @@
 package ctypes
 
 import (
-	"encoding/xml"
 	"strconv"
+
+	"github.com/nbio/xml"
 )
 
 // Grid Column Definition

@@ -1,7 +1,7 @@
 package ctypes
 
 import (
-	"encoding/xml"
+	"github.com/nbio/xml"
 
 	"github.com/autobutler-ai/godocx/wml/stypes"
 )

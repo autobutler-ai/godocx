@@ -1,9 +1,10 @@
 package docx
 
 import (
-	"encoding/xml"
 	"errors"
 	"strings"
+
+	"github.com/nbio/xml"
 )
 
 // Types represents the root structure of the XML document.

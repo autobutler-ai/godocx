@@ -1,7 +1,7 @@
 package dmlct
 
 import (
-	"encoding/xml"
+	"github.com/nbio/xml"
 	"strconv"
 
 	"github.com/autobutler-ai/godocx/common/units"

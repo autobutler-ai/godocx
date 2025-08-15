@@ -1,7 +1,7 @@
 package dml
 
 import (
-	"encoding/xml"
+	"github.com/nbio/xml"
 	"errors"
 
 	"github.com/autobutler-ai/godocx/dml/dmlst"

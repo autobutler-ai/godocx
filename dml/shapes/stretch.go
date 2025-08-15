@@ -1,7 +1,7 @@
 package shapes
 
 import (
-	"encoding/xml"
+	"github.com/nbio/xml"
 
 	"github.com/autobutler-ai/godocx/dml/dmlct"
 )

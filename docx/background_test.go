@@ -1,7 +1,7 @@
 package docx
 
 import (
-	"encoding/xml"
+	"github.com/nbio/xml"
 	"strings"
 	"testing"
 

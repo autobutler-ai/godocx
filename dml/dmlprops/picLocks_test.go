@@ -1,7 +1,7 @@
 package dmlprops
 
 import (
-	"encoding/xml"
+	"github.com/nbio/xml"
 	"testing"
 
 	"github.com/autobutler-ai/godocx/dml/dmlst"

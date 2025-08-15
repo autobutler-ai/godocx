@@ -1,7 +1,7 @@
 package docx
 
 import (
-	"encoding/xml"
+	"github.com/nbio/xml"
 )
 
 // Relationship represents a relationship between elements in an Office Open XML (OOXML) document.

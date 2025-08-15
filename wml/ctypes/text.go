@@ -2,8 +2,9 @@ package ctypes
 
 import (
 	"bytes"
-	"encoding/xml"
 	"strings"
+
+	"github.com/nbio/xml"
 )
 
 type Text struct {

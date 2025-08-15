@@ -2,8 +2,9 @@ package docx
 
 import (
 	"bytes"
-	"encoding/xml"
 	"io"
+
+	"github.com/nbio/xml"
 
 	"github.com/autobutler-ai/godocx/common/constants"
 )

@@ -1,8 +1,9 @@
 package ctypes
 
 import (
-	"encoding/xml"
 	"fmt"
+
+	"github.com/nbio/xml"
 )
 
 // Numbering Definition Instance Reference

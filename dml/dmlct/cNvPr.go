@@ -1,8 +1,9 @@
 package dmlct
 
 import (
-	"encoding/xml"
 	"strconv"
+
+	"github.com/nbio/xml"
 )
 
 // Non-Visual Drawing Properties

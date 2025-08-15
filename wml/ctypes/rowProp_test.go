@@ -1,10 +1,11 @@
 package ctypes
 
 import (
-	"encoding/xml"
 	"errors"
 	"strings"
 	"testing"
+
+	"github.com/nbio/xml"
 
 	"github.com/autobutler-ai/godocx/internal"
 	"github.com/autobutler-ai/godocx/wml/stypes"

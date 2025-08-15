@@ -1,8 +1,9 @@
 package docx
 
 import (
-	"encoding/xml"
 	"sync"
+
+	"github.com/nbio/xml"
 
 	"github.com/autobutler-ai/godocx/wml/ctypes"
 )

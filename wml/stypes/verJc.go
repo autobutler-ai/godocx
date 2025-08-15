@@ -1,7 +1,7 @@
 package stypes
 
 import (
-	"encoding/xml"
+	"github.com/nbio/xml"
 	"fmt"
 )
 

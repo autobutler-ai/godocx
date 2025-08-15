@@ -1,11 +1,12 @@
 package docx
 
 import (
-	"encoding/xml"
 	"errors"
 	"fmt"
 	"path/filepath"
 	"strings"
+
+	"github.com/nbio/xml"
 
 	"github.com/autobutler-ai/godocx/common/constants"
 	"github.com/autobutler-ai/godocx/common/units"

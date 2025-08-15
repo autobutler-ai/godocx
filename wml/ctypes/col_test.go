@@ -1,9 +1,10 @@
 package ctypes
 
 import (
-	"encoding/xml"
 	"strings"
 	"testing"
+
+	"github.com/nbio/xml"
 
 	"github.com/autobutler-ai/godocx/internal"
 )

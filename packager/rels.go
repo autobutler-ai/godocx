@@ -1,7 +1,7 @@
 package packager
 
 import (
-	"encoding/xml"
+	"github.com/nbio/xml"
 
 	"github.com/autobutler-ai/godocx/common/constants"
 	"github.com/autobutler-ai/godocx/docx"

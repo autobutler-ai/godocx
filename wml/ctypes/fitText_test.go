@@ -1,10 +1,11 @@
 package ctypes
 
 import (
-	"encoding/xml"
 	"reflect"
 	"strings"
 	"testing"
+
+	"github.com/nbio/xml"
 )
 
 func TestFitText_MarshalXML(t *testing.T) {

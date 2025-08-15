@@ -35,7 +35,7 @@ var numberingAttrs = map[string]string{
 
 // This element specifies the contents of a main document part in a WordprocessingML document.
 type Numbering struct {
-	XMLName          xml.Name     `xml:"numbering"`
+	XMLName          xml.Name     `xml:"http://schemas.openxmlformats.org/wordprocessingml/2006/main w:numbering"`
 	Namespace_mc     string       `xml:"xmlns:mc,attr"`
 	Namespace_o      string       `xml:"xmlns:o,attr"`
 	Namespace_r      string       `xml:"xmlns:r,attr"`

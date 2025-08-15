@@ -6,59 +6,33 @@ import (
 	"github.com/autobutler-ai/godocx/wml/stypes"
 )
 
-var numberingAttrs = map[string]string{
-	"xmlns:mc":     "http://schemas.openxmlformats.org/markup-compatibility/2006",
-	"xmlns:o":      "urn:schemas-microsoft-com:office:office",
-	"xmlns:r":      "http://schemas.openxmlformats.org/officeDocument/2006/relationships",
-	"xmlns:m":      "http://schemas.openxmlformats.org/officeDocument/2006/math",
-	"xmlns:v":      "urn:schemas-microsoft-com:vml",
-	"xmlns:wp":     "http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing",
-	"xmlns:w10":    "urn:schemas-microsoft-com:office:word",
-	"xmlns:w":      "http://schemas.openxmlformats.org/wordprocessingml/2006/main",
-	"xmlns:wne":    "http://schemas.microsoft.com/office/word/2006/wordml",
-	"xmlns:sl":     "http://schemas.openxmlformats.org/schemaLibrary/2006/main",
-	"xmlns:a":      "http://schemas.openxmlformats.org/drawingml/2006/main",
-	"xmlns:pic":    "http://schemas.openxmlformats.org/drawingml/2006/picture",
-	"xmlns:c":      "http://schemas.openxmlformats.org/drawingml/2006/chart",
-	"xmlns:lc":     "http://schemas.openxmlformats.org/drawingml/2006/lockedCanvas",
-	"xmlns:dgm":    "http://schemas.openxmlformats.org/drawingml/2006/diagram",
-	"xmlns:wps":    "http://schemas.microsoft.com/office/word/2010/wordprocessingShape",
-	"xmlns:wpg":    "http://schemas.microsoft.com/office/word/2010/wordprocessingGroup",
-	"xmlns:w14":    "http://schemas.microsoft.com/office/word/2010/wordml",
-	"xmlns:w15":    "http://schemas.microsoft.com/office/word/2012/wordml",
-	"xmlns:w16":    "http://schemas.microsoft.com/office/word/2018/wordml",
-	"xmlns:w16cex": "http://schemas.microsoft.com/office/word/2018/wordml/cex",
-	"xmlns:w16cid": "http://schemas.microsoft.com/office/word/2016/wordml/cid",
-	"xmlns:cr":     "http://schemas.microsoft.com/office/comments/2020/reactions",
-	"xmlns=":       "http://schemas.microsoft.com/office/tasks/2019/documenttasks",
-}
-
 // This element specifies the contents of a main document part in a WordprocessingML document.
 type Numbering struct {
-	XMLName          xml.Name `xml:"http://schemas.openxmlformats.org/wordprocessingml/2006/main w:numbering"`
-	Namespace_mc     string   `xml:"xmlns:mc,attr"`
-	Namespace_o      string   `xml:"xmlns:o,attr"`
-	Namespace_r      string   `xml:"xmlns:r,attr"`
-	Namespace_m      string   `xml:"xmlns:m,attr"`
-	Namespace_v      string   `xml:"xmlns:v,attr"`
-	Namespace_wp     string   `xml:"xmlns:wp,attr"`
-	Namespace_w10    string   `xml:"xmlns:w10,attr"`
-	Namespace_w      string   `xml:"xmlns:w,attr"`
-	Namespace_wne    string   `xml:"xmlns:wne,attr"`
-	Namespace_sl     string   `xml:"xmlns:sl,attr"`
-	Namespace_a      string   `xml:"xmlns:a,attr"`
-	Namespace_pic    string   `xml:"xmlns:pic,attr"`
-	Namespace_c      string   `xml:"xmlns:c,attr"`
-	Namespace_lc     string   `xml:"xmlns:lc,attr"`
-	Namespace_dgm    string   `xml:"xmlns:dgm,attr"`
-	Namespace_wps    string   `xml:"xmlns:wps,attr"`
-	Namespace_wpg    string   `xml:"xmlns:wpg,attr"`
-	Namespace_w14    string   `xml:"xmlns:w14,attr"`
-	Namespace_w15    string   `xml:"xmlns:w15,attr"`
-	Namespace_w16    string   `xml:"xmlns:w16,attr"`
-	Namespace_w16cex string   `xml:"xmlns:w16cex,attr"`
-	Namespace_w16cid string   `xml:"xmlns:w16cid,attr"`
-	Namespace_cr     string   `xml:"xmlns:cr,attr"`
+	XMLName          xml.Name `xml:"w:numbering"`
+	Namespace_a      string   `xml:"http://www.w3.org/2000/xmlns/ xmlns:a,attr"`
+	Namespace_c      string   `xml:"http://www.w3.org/2000/xmlns/ xmlns:c,attr"`
+	Namespace_cr     string   `xml:"http://www.w3.org/2000/xmlns/ xmlns:cr,attr"`
+	Namespace_dgm    string   `xml:"http://www.w3.org/2000/xmlns/ xmlns:dgm,attr"`
+	Namespace_lc     string   `xml:"http://www.w3.org/2000/xmlns/ xmlns:lc,attr"`
+	Namespace_m      string   `xml:"http://www.w3.org/2000/xmlns/ xmlns:m,attr"`
+	Namespace_mc     string   `xml:"http://www.w3.org/2000/xmlns/ xmlns:mc,attr"`
+	Namespace_o      string   `xml:"http://www.w3.org/2000/xmlns/ xmlns:o,attr"`
+	Namespace_pic    string   `xml:"http://www.w3.org/2000/xmlns/ xmlns:pic,attr"`
+	Namespace_r      string   `xml:"http://www.w3.org/2000/xmlns/ xmlns:r,attr"`
+	Namespace_sl     string   `xml:"http://www.w3.org/2000/xmlns/ xmlns:sl,attr"`
+	Namespace_v      string   `xml:"http://www.w3.org/2000/xmlns/ xmlns:v,attr"`
+	Namespace_w      string   `xml:"http://www.w3.org/2000/xmlns/ xmlns:w,attr"`
+	Namespace_w10    string   `xml:"http://www.w3.org/2000/xmlns/ xmlns:w10,attr"`
+	Namespace_w14    string   `xml:"http://www.w3.org/2000/xmlns/ xmlns:w14,attr"`
+	Namespace_w15    string   `xml:"http://www.w3.org/2000/xmlns/ xmlns:w15,attr"`
+	Namespace_w16    string   `xml:"http://www.w3.org/2000/xmlns/ xmlns:w16,attr"`
+	Namespace_w16cex string   `xml:"http://www.w3.org/2000/xmlns/ xmlns:w16cex,attr"`
+	Namespace_w16cid string   `xml:"http://www.w3.org/2000/xmlns/ xmlns:w16cid,attr"`
+	Namespace_wne    string   `xml:"http://www.w3.org/2000/xmlns/ xmlns:wne,attr"`
+	Namespace_wp     string   `xml:"http://www.w3.org/2000/xmlns/ xmlns:wp,attr"`
+	Namespace_wpg    string   `xml:"http://www.w3.org/2000/xmlns/ xmlns:wpg,attr"`
+	Namespace_wps    string   `xml:"http://www.w3.org/2000/xmlns/ xmlns:wps,attr"`
+	Namespace        string   `xml:"xmlns,attr"`
 	AbstractNum      *AbstractNum
 	Num              *Num
 	RelativePath     string `xml:"-"` // RelativePath is the path to the numbering file within the document package.
@@ -66,8 +40,9 @@ type Numbering struct {
 
 func NewNumbering(abstractNumId int, isOrdered bool) *Numbering {
 	return &Numbering{
-		XMLName:          xml.Name{Local: "numbering", Space: "http://schemas.openxmlformats.org/wordprocessingml/2006/main"},
+		// XMLName:          xml.Name{Local: "numbering"},
 		AbstractNum:      NewAbstractNum(abstractNumId, isOrdered),
+		Num:              NewNum(1, 1),
 		Namespace_mc:     "http://schemas.openxmlformats.org/markup-compatibility/2006",
 		Namespace_o:      "urn:schemas-microsoft-com:office:office",
 		Namespace_r:      "http://schemas.openxmlformats.org/officeDocument/2006/relationships",
@@ -91,6 +66,7 @@ func NewNumbering(abstractNumId int, isOrdered bool) *Numbering {
 		Namespace_w16cex: "http://schemas.microsoft.com/office/word/2018/wordml/cex",
 		Namespace_w16cid: "http://schemas.microsoft.com/office/word/2016/wordml/cid",
 		Namespace_cr:     "http://schemas.microsoft.com/office/comments/2020/reactions",
+		Namespace:        "http://schemas.microsoft.com/office/tasks/2019/documenttasks",
 	}
 }
 
@@ -117,13 +93,26 @@ func NewAbstractNum(abstractNumId int, isOrdered bool) *AbstractNum {
 
 type Num struct {
 	XMLName       xml.Name      `xml:"http://schemas.openxmlformats.org/wordprocessingml/2006/main w:num"`
-	NumId         string        `xml:"http://schemas.openxmlformats.org/wordprocessingml/2006/main w:numId,attr"`
+	NumId         int           `xml:"http://schemas.openxmlformats.org/wordprocessingml/2006/main w:numId,attr"`
 	AbstractNumId AbstractNumId `xml:"http://schemas.openxmlformats.org/wordprocessingml/2006/main w:abstractNumId"`
 }
 
+func NewNum(numId int, abstractNumId int) *Num {
+	return &Num{
+		NumId:         numId,
+		AbstractNumId: *NewAbstractNumId(abstractNumId),
+	}
+}
+
 type AbstractNumId struct {
-	XMLName       xml.Name `xml:"http://schemas.openxmlformats.org/wordprocessingml/2006/main w:abstractNumId"`
-	AbstractNumId int      `xml:"http://schemas.openxmlformats.org/wordprocessingml/2006/main w:val,attr"`
+	XMLName xml.Name `xml:"http://schemas.openxmlformats.org/wordprocessingml/2006/main w:abstractNumId"`
+	Val     int      `xml:"http://schemas.openxmlformats.org/wordprocessingml/2006/main w:val,attr"`
+}
+
+func NewAbstractNumId(val int) *AbstractNumId {
+	return &AbstractNumId{
+		Val: val,
+	}
 }
 
 type Level struct {

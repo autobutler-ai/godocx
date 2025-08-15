@@ -4,6 +4,7 @@ import (
 	"archive/zip"
 	"bytes"
 	"fmt"
+	"path"
 	"strings"
 
 	"github.com/autobutler-ai/godocx/common/constants"
@@ -104,30 +105,30 @@ func Unpack(content *[]byte) (*docx.RootDoc, error) {
 	delete(fileIndex, *rootRelURI)
 	rd.Document.DocRels = *docRelations
 
-	// wordDir := path.Dir(docPath)
+	wordDir := path.Dir(docPath)
 
 	rd.DocStyles = &ctypes.Styles{}
 	rID := 0
-	// for _, relation := range docRelations.Relationships {
-	// 	rID += 1
-	// 	switch relation.Type {
-	// 	case constants.StylesType:
-	// 		sFileName := relation.Target
-	// 		if sFileName == "" {
-	// 			continue
-	// 		}
-	// 		stylesPath := path.Join(wordDir, sFileName)
+	for _, relation := range docRelations.Relationships {
+		rID += 1
+		switch relation.Type {
+		case constants.StylesType:
+			sFileName := relation.Target
+			if sFileName == "" {
+				continue
+			}
+			stylesPath := path.Join(wordDir, sFileName)
 
-	// 		//Load Styles
-	// 		stylesFile := fileIndex[stylesPath]
-	// 		stylesObj, err := docx.LoadStyles(stylesPath, stylesFile)
-	// 		if err != nil {
-	// 			return nil, err
-	// 		}
-	// 		delete(fileIndex, stylesPath)
-	// 		rd.DocStyles = stylesObj
-	// 	}
-	// }
+			//Load Styles
+			stylesFile := fileIndex[stylesPath]
+			stylesObj, err := docx.LoadStyles(stylesPath, stylesFile)
+			if err != nil {
+				return nil, err
+			}
+			delete(fileIndex, stylesPath)
+			rd.DocStyles = stylesObj
+		}
+	}
 
 	rd.Document.RID = rID
 

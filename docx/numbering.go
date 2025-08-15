@@ -72,6 +72,12 @@ func NewNumbering() *Numbering {
 	}
 }
 
+func (n *Numbering) ClearNumbering() error {
+	n.AbstractNums = make([]*AbstractNum, 0, 10)
+	n.Nums = make([]*Num, 0, 10)
+	return nil
+}
+
 func (n *Numbering) HasNumberingLevel(level int) bool {
 	for _, num := range n.Nums {
 		if num.NumId == level {

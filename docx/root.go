@@ -25,14 +25,12 @@ type RootDoc struct {
 	ImageCount uint
 }
 
-type RootDocOptions struct {
-	IsOrdered bool // IsOrdered indicates whether the numbering is ordered or unordered.
-}
+type RootDocOptions struct{}
 
 // NewRootDoc creates a new instance of the RootDoc structure.
 func NewRootDoc(options RootDocOptions) *RootDoc {
 	return &RootDoc{
-		Numbering: NewNumbering(1, options.IsOrdered),
+		Numbering: NewNumbering(),
 	}
 }
 
@@ -60,7 +58,7 @@ func LoadDocXml(rd *RootDoc, fileName string, fileBytes []byte) (*Document, erro
 }
 
 func LoadNumberingXml(rd *RootDoc, fileName string, fileBytes []byte) (*Numbering, error) {
-	numbering := NewNumbering(1, false)
+	numbering := NewNumbering()
 	err := xml.Unmarshal(fileBytes, numbering)
 	if err != nil {
 		return nil, err

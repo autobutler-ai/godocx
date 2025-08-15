@@ -35,33 +35,33 @@ var numberingAttrs = map[string]string{
 
 // This element specifies the contents of a main document part in a WordprocessingML document.
 type Numbering struct {
-	XMLName          xml.Name     `xml:"http://schemas.openxmlformats.org/wordprocessingml/2006/main w:numbering"`
-	Namespace_mc     string       `xml:"xmlns:mc,attr"`
-	Namespace_o      string       `xml:"xmlns:o,attr"`
-	Namespace_r      string       `xml:"xmlns:r,attr"`
-	Namespace_m      string       `xml:"xmlns:m,attr"`
-	Namespace_v      string       `xml:"xmlns:v,attr"`
-	Namespace_wp     string       `xml:"xmlns:wp,attr"`
-	Namespace_w10    string       `xml:"xmlns:w10,attr"`
-	Namespace_w      string       `xml:"xmlns:w,attr"`
-	Namespace_wne    string       `xml:"xmlns:wne,attr"`
-	Namespace_sl     string       `xml:"xmlns:sl,attr"`
-	Namespace_a      string       `xml:"xmlns:a,attr"`
-	Namespace_pic    string       `xml:"xmlns:pic,attr"`
-	Namespace_c      string       `xml:"xmlns:c,attr"`
-	Namespace_lc     string       `xml:"xmlns:lc,attr"`
-	Namespace_dgm    string       `xml:"xmlns:dgm,attr"`
-	Namespace_wps    string       `xml:"xmlns:wps,attr"`
-	Namespace_wpg    string       `xml:"xmlns:wpg,attr"`
-	Namespace_w14    string       `xml:"xmlns:w14,attr"`
-	Namespace_w15    string       `xml:"xmlns:w15,attr"`
-	Namespace_w16    string       `xml:"xmlns:w16,attr"`
-	Namespace_w16cex string       `xml:"xmlns:w16cex,attr"`
-	Namespace_w16cid string       `xml:"xmlns:w16cid,attr"`
-	Namespace_cr     string       `xml:"xmlns:cr,attr"`
-	AbstractNum      *AbstractNum `xml:"abstractNum"`
-	Num              *Num         `xml:"num"`
-	RelativePath     string       // RelativePath is the path to the numbering file within the document package.
+	XMLName          xml.Name `xml:"http://schemas.openxmlformats.org/wordprocessingml/2006/main w:numbering"`
+	Namespace_mc     string   `xml:"xmlns:mc,attr"`
+	Namespace_o      string   `xml:"xmlns:o,attr"`
+	Namespace_r      string   `xml:"xmlns:r,attr"`
+	Namespace_m      string   `xml:"xmlns:m,attr"`
+	Namespace_v      string   `xml:"xmlns:v,attr"`
+	Namespace_wp     string   `xml:"xmlns:wp,attr"`
+	Namespace_w10    string   `xml:"xmlns:w10,attr"`
+	Namespace_w      string   `xml:"xmlns:w,attr"`
+	Namespace_wne    string   `xml:"xmlns:wne,attr"`
+	Namespace_sl     string   `xml:"xmlns:sl,attr"`
+	Namespace_a      string   `xml:"xmlns:a,attr"`
+	Namespace_pic    string   `xml:"xmlns:pic,attr"`
+	Namespace_c      string   `xml:"xmlns:c,attr"`
+	Namespace_lc     string   `xml:"xmlns:lc,attr"`
+	Namespace_dgm    string   `xml:"xmlns:dgm,attr"`
+	Namespace_wps    string   `xml:"xmlns:wps,attr"`
+	Namespace_wpg    string   `xml:"xmlns:wpg,attr"`
+	Namespace_w14    string   `xml:"xmlns:w14,attr"`
+	Namespace_w15    string   `xml:"xmlns:w15,attr"`
+	Namespace_w16    string   `xml:"xmlns:w16,attr"`
+	Namespace_w16cex string   `xml:"xmlns:w16cex,attr"`
+	Namespace_w16cid string   `xml:"xmlns:w16cid,attr"`
+	Namespace_cr     string   `xml:"xmlns:cr,attr"`
+	AbstractNum      *AbstractNum
+	Num              *Num
+	RelativePath     string `xml:"-"` // RelativePath is the path to the numbering file within the document package.
 }
 
 func NewNumbering(abstractNumId int, isOrdered bool) *Numbering {
@@ -96,8 +96,9 @@ func NewNumbering(abstractNumId int, isOrdered bool) *Numbering {
 
 // This element specifies the contents of a main document part in a WordprocessingML document.
 type AbstractNum struct {
-	AbstractNumId int     `xml:"abstractNumId,attr"`
-	Levels        []Level `xml:"lvl"`
+	XMLName       xml.Name `xml:"http://schemas.openxmlformats.org/wordprocessingml/2006/main w:abstractNum"`
+	AbstractNumId int      `xml:"http://schemas.openxmlformats.org/wordprocessingml/2006/main w:abstractNumId,attr"`
+	Levels        []Level  `xml:"http://schemas.openxmlformats.org/wordprocessingml/2006/main w:lvl"`
 }
 
 func NewAbstractNum(abstractNumId int, isOrdered bool) *AbstractNum {
@@ -115,31 +116,42 @@ func NewAbstractNum(abstractNumId int, isOrdered bool) *AbstractNum {
 }
 
 type Num struct {
-	NumId         string `xml:"numId,attr"`
-	AbstractNumId string `xml:"abstractNumId,attr"`
+	XMLName       xml.Name      `xml:"http://schemas.openxmlformats.org/wordprocessingml/2006/main w:num"`
+	NumId         string        `xml:"http://schemas.openxmlformats.org/wordprocessingml/2006/main w:numId,attr"`
+	AbstractNumId AbstractNumId `xml:"http://schemas.openxmlformats.org/wordprocessingml/2006/main w:abstractNumId"`
+}
+
+type AbstractNumId struct {
+	XMLName       xml.Name `xml:"http://schemas.openxmlformats.org/wordprocessingml/2006/main w:abstractNumId"`
+	AbstractNumId int      `xml:"http://schemas.openxmlformats.org/wordprocessingml/2006/main w:val,attr"`
 }
 
 type Level struct {
-	Level     int       `xml:"ilvl,attr"`
-	Start     Start     `xml:"start"`
-	NumFmt    NumFmt    `xml:"numFmt"`
-	LevelText LevelText `xml:"lvlText"`
+	XMLName   xml.Name  `xml:"http://schemas.openxmlformats.org/wordprocessingml/2006/main w:lvl"`
+	Level     int       `xml:"http://schemas.openxmlformats.org/wordprocessingml/2006/main w:ilvl,attr"`
+	Start     Start     `xml:"http://schemas.openxmlformats.org/wordprocessingml/2006/main w:start"`
+	NumFmt    NumFmt    `xml:"http://schemas.openxmlformats.org/wordprocessingml/2006/main w:numFmt"`
+	LevelText LevelText `xml:"http://schemas.openxmlformats.org/wordprocessingml/2006/main w:lvlText"`
 }
 
 type Start struct {
-	Val int `xml:"val,attr"`
+	XMLName xml.Name `xml:"http://schemas.openxmlformats.org/wordprocessingml/2006/main w:start"`
+	Val     int      `xml:"http://schemas.openxmlformats.org/wordprocessingml/2006/main w:val,attr"`
 }
 
 type LevelText struct {
-	Val string `xml:"val,attr"`
+	XMLName xml.Name `xml:"http://schemas.openxmlformats.org/wordprocessingml/2006/main w:lvlText"`
+	Val     string   `xml:"http://schemas.openxmlformats.org/wordprocessingml/2006/main w:val,attr"`
 }
 
 type LevelJustification struct {
-	Val string `xml:"val,attr"`
+	XMLName xml.Name `xml:"http://schemas.openxmlformats.org/wordprocessingml/2006/main w:lvlJc"`
+	Val     string   `xml:"http://schemas.openxmlformats.org/wordprocessingml/2006/main w:val,attr"`
 }
 
 type NumFmt struct {
-	Val stypes.NumFmt `xml:"val,attr"`
+	XMLName xml.Name      `xml:"http://schemas.openxmlformats.org/wordprocessingml/2006/main w:numFmt"`
+	Val     stypes.NumFmt `xml:"http://schemas.openxmlformats.org/wordprocessingml/2006/main w:val,attr"`
 }
 
 var OrderedLevelText = LevelText{Val: "%1."}
